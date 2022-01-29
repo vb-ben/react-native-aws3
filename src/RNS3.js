@@ -33,7 +33,7 @@ export class RNS3 {
   static put(file, options) {
     options = {
       ...options,
-      key: (options.keyPrefix || '') + file.name,
+      key: options.key || ((options.keyPrefix || '') + file.name),
       date: new Date,
       contentType: file.type
     }
